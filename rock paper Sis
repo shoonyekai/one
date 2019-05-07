@@ -1,0 +1,88 @@
+import random
+print('Welcome to Rock, Paper, Scissors!')
+print()
+name = str(input("Whats your name :"))
+nam = name[0].upper()+name[1:len(name)]
+print()
+
+def con(n):
+    if n == "r":
+        return "Rock"
+    elif n == "p":
+        return "Paper"
+    elif n == "s":
+        return "Scissors"
+    else:
+        return "error"
+
+
+scoreb = 0
+scoreh = 0
+
+loop = 0
+while loop == 0:
+    re = input(nam[0].upper()+nam[1:len(nam)]+"!!! would you like to play *Rock/Paper/scissors*(y or n):")
+    print()
+    if re == "y":
+        pts = int(input('All right!! For How many points : '))
+        print()
+        print("Get Ready :D!! The first one to Scoer ", int(pts), " points Wins!!")
+        print()
+        if pts >= 1:
+            e = 0
+            while e == 0:
+                    if scoreb < pts and scoreh < pts:
+                        bot = (random.choice("rsp"))
+                        hum = (input("Choose (R)ock, (P)aper, or (S)cissors: "))
+                        print()
+                        if len(hum) == 1:
+                            if hum == "r" or hum == "p" or hum == "s":
+                                if bot == hum:
+                                    print(nam, " : ", (con(hum)) + "  Computer :", con(bot) + " Its A draw!!!")
+                                    print("Score: " + nam + " " + str(scoreh) + "   Computer " + str(scoreb))
+                                    print()
+                                elif bot == "r" and hum == "s":
+                                    scoreb = scoreb + 1
+                                    print(nam, " : ", con(hum) + "  Computer :", con(bot) + "  Computer wins!!!")
+                                    print("Score: " + nam + " " + str(scoreh) + "   Computer " + str(scoreb))
+                                    print()
+                                elif bot == "s" and hum == "p":
+                                    scoreb = scoreb + 1
+                                    print(nam, " : ", con(hum) + "  Computer :", con(bot) + "  Computer wins!!!")
+                                    print("Score: " + nam + " " + str(scoreh) + "   Computer " + str(scoreb))
+                                    print()
+                                elif bot == "p" and hum == "r":
+                                    scoreb = scoreb + 1
+                                    print(nam, " : ", con(hum) + "  Computer :", con(bot) + "  Computer wins!!!")
+                                    print("Score: " + nam + " " + str(scoreh) + "   Computer " + str(scoreb))
+                                    print()
+                                else:
+                                    scoreh = scoreh + 1
+                                    print(nam, " : ", con(hum) + "  Computer :", con(bot) + "  you wins!!!")
+                                    print("Score: " + nam + " " + str(scoreh) + "   Computer " + str(scoreb))
+                                    print()
+                        else:
+                            print("Please provide answer from various input only (r/s/p)")
+                            print()
+                    elif scoreb == pts:
+                        print("Better luck next time :( "+nam+".")
+                        print("Computer Wins!!!")
+                        print()
+                        print("Final Score: " + nam + " score: " + str(scoreh) + "  Computer score: " + str(scoreb))
+                        print()
+                        e = 1
+                    else:
+                        print("!!!You Win!!!")
+                        print("Final Score:  " + nam + " score: " + str(scoreh) + "  Computer score: " + str(scoreb))
+                        print()
+                        e = 1
+        else:
+            print("please provide a number Grater then 1")
+    elif re == "n":
+        loop = 1
+        print('See you soon '+nam+" :) ")
+        print()
+        break
+    else:
+        print("Please type Yes or no by letters : y or n")
+        print()
