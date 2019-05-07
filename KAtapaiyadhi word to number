@@ -1,0 +1,43 @@
+
+tdict = {
+    'a': '.',
+    'b': '1',
+    'c': '2',
+    'd': '3',
+    'e': '.',
+    'f': '4',
+    'g': '5',
+    'h': '6',
+    'i': '.',
+    'j': '7',
+    'k': '8',
+    'l': '9',
+    'm': '0',
+    'n': '1',
+    'o': '.',
+    'p': '2',
+    'q': '3',
+    'r': '4',
+    's': '5',
+    't': '6',
+    'u': '.',
+    'v': '7',
+    'w': '8',
+    'x': '9',
+    'y': '.',
+    'z': '0',
+    '/': '/',
+    '.': ' '
+}
+Phrase = input("Enter a phrase: ")
+def translate(wrd):
+    translation = ''
+    for letter in wrd.lower():
+        if letter in tdict:
+            translation = f'{translation}{tdict[letter]}'
+        else:
+            print(f'{letter} is not in dictionary')
+    return translation
+
+
+print(translate(Phrase))
