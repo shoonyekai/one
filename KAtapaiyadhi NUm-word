@@ -1,0 +1,38 @@
+number = input("please enter your number: ")
+def translate(num):
+    translation = ""
+    for letter in num:
+        import random
+        if letter in ".":
+            translation = translation + random.choice("aeiouy")
+        elif letter in "1":
+            translation = translation + random.choice("bn")
+        elif letter in "2":
+            translation = translation + random.choice("cp")
+        elif letter in "3":
+            translation = translation + random.choice("dq")
+        elif letter in "4":
+            translation = translation + random.choice("fr")
+        elif letter in "5":
+            translation = translation + random.choice("gs")
+        elif letter in "6":
+            translation = translation + random.choice("ht")
+        elif letter in "7":
+            translation = translation + random.choice("jv")
+        elif letter in "8":
+            translation = translation + random.choice("kw")
+        elif letter in "9":
+            translation = translation + random.choice("lx")
+        elif letter in "0":
+            translation = translation + random.choice("mz")
+        else:
+            translation = translation + letter
+    return translation
+
+count = 0
+while (count < 10):
+    if count == translate(number):
+        break
+    else:
+     count = count+1
+    print(translate(number))
